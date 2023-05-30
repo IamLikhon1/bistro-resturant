@@ -4,6 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import SocalLogin from '../Shared/SocalLogin/SocalLogin';
 
 const Login = () => {
     const [disabled,setDisabled]=useState(true);
@@ -90,10 +91,11 @@ const Login = () => {
         </div>
         <div className="form-control mt-6">
           
-          <input disabled={disabled} className="btn btn-secondary" type="submit" value="Login" />
+          <input disabled={false} className="btn btn-secondary" type="submit" value="Login" />
         </div>
       </form>
       <p className='p-4 font-medium text-orange-500 '><small>New to Here? <Link to='/signup'>Create a Account</Link></small></p>
+      <SocalLogin></SocalLogin>
     </div>
   </div>
 </div>

@@ -12,6 +12,7 @@ import Secrect from "../pages/Shared/Secrect/Secrect";
 import PrivateRoutes from "./PrivateRoutes";
 import DashBoard from "../Layout/DashBoard";
 import MyCart from "../pages/DashBoard/MyCart/MyCart";
+import AllUsers from "../pages/DashBoard/AllUsers/AllUsers";
 
 
  export const router = createBrowserRouter([
@@ -47,12 +48,16 @@ import MyCart from "../pages/DashBoard/MyCart/MyCart";
     },
     {
       path:'dashboard',
-      element:<DashBoard></DashBoard>,
+      element:<PrivateRoutes><DashBoard></DashBoard></PrivateRoutes>,
       children:[
         {
           path:'mycart',
           element:<MyCart></MyCart>
-        }
+        },
+        {
+          path:'allusers',
+          element:<AllUsers></AllUsers>
+        },
       ]
     }
   ]);  
